@@ -2,9 +2,9 @@ package order
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/mkm29/go-grpc-api-gateway/pkg/auth"
-	"github.com/mkm29/go-grpc-api-gateway/pkg/config"
-	"github.com/mkm29/go-grpc-api-gateway/pkg/order/routes"
+	"github.com/mkm29/go-grp-api-gateway/pkg/auth"
+	"github.com/mkm29/go-grp-api-gateway/pkg/config"
+	"github.com/mkm29/go-grp-api-gateway/pkg/order/routes"
 )
 
 func RegisterRoutes(r *gin.Engine, c *config.Config, authSvc *auth.ServiceClient) {
