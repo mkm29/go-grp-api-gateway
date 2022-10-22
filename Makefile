@@ -28,7 +28,11 @@ bootstrap: ## Setup project
 
 
 proto: ## Generate proto files
-	protoc pkg/**/pb/*.proto --go-grpc_out=:.
+	protoc pkg/**/pb/*.proto --go_out=:. --go-grpc_out=:. 
+	# --go_out=./client --go-grpc_out=./client
 
 server: ## Run server
 	go run cmd/main.go
+
+
+# https://stackoverflow.com/questions/71777702/service-compiling-successfully-but-message-structs-not-generating-grpc-go
