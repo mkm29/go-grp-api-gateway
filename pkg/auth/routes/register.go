@@ -30,4 +30,6 @@ func Register(ctx *gin.Context, c pb.AuthServiceClient) {
 		ctx.AbortWithError(http.StatusBadGateway, err)
 		return
 	}
+	// return response
+	ctx.JSON(int(res.Status), &res)
 }

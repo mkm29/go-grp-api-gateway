@@ -44,7 +44,7 @@ build: ## Build the project
 
 proto: ## Generate proto files
 	protoc pkg/**/pb/*.proto --go_out=:. --go-grpc_out=:. 
-	# --go_out=./client --go-grpc_out=./client
+	# --go-grpc_out=:.  --go_out=./client --go-grpc_out=./client
 
 server: ## Run server
 	go run cmd/main.go
