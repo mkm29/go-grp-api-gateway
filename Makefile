@@ -26,6 +26,21 @@ bootstrap: ## Setup project
 	touch pkg/product/pb/product.proto pkg/product/routes/create_product.go pkg/product/routes/find_one.go pkg/product/client.go pkg/product/routes.go
 	touch pkg/order/pb/order.proto pkg/order/routes/create_order.go pkg/order/client.go pkg/product/routes.go
 
+start_database: ## Start the database
+	docker run -p 15432:5432 -e POSTGRES_PASSWORD=password -d --name postgres postgres
+
+stop_database: ## Stop the database
+	docker stop postgres
+
+remove_database: ## Remove the database
+	docker rm postgres
+
+create_database: ## Create the database
+	docker exec -it postgres psql -U postgres -c "CREATE DATABASE auth_svc; CREATE DATABASE product_svc; CREATE DATABASE order_svc;"
+
+build: ## Build the project
+	@echo "Building the project"
+	@go build -o bin/$(PROJECT) cmd/main.go
 
 proto: ## Generate proto files
 	protoc pkg/**/pb/*.proto --go_out=:. --go-grpc_out=:. 
