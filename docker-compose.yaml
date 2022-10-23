@@ -14,19 +14,31 @@ services:
     ports:
       - "3000:3000"
   auth:
-    image: mkm29/grpc-auth-svc:0.1.1
+    build:
+      context: ../go-grpc-auth-svc/
+      args:
+        DB_USERNAME: postgres
+        DB_PASSWORD: postgres
     ports:
       - "50051:50051"
     depends_on:
       - db
   order:
-    image: mkm29/grpc-order-svc:0.1.2
+    build:
+      context: ../go-grpc-order-svc/
+      args:
+        DB_USERNAME: postgres
+        DB_PASSWORD: postgres
     ports:
       - "50053:50053"
     depends_on:
       - db
   product:
-    image: mkm29/grpc-product-svc:0.1.1
+    build:
+      context: ../go-grpc-product-svc/
+      args:
+        DB_USERNAME: postgres
+        DB_PASSWORD: postgres
     ports:
       - "50052:50052"
     depends_on:
