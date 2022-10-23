@@ -13,6 +13,8 @@ type Config struct {
 
 func LoadConfig() (c Config, err error) {
 	viper.AddConfigPath("./pkg/config/envs")
+	// For Docker
+	viper.AddConfigPath("/api-gateway")
 	viper.SetConfigName("dev")
 	viper.SetConfigType("env")
 

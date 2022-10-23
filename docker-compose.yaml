@@ -1,0 +1,25 @@
+version: "3.9"
+   
+services:
+  db:
+    image: postgres:12
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+  gateway:
+    image: mkm29/grpc-api-gateway:0.1.0
+    ports:
+      - "3000:3000"
+  auth:
+    image: mkm29/grpc-auth-svc:0.1.0
+    ports:
+      - "50051:50051"
+  order:
+    image: mkm29/grpc-order-svc:0.1.0
+    ports:
+      - "50053:50053"
+  product:
+    image: mkm29/grpc-product-svc:0.1.0
+    ports:
+      - "50052:50052"
