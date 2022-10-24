@@ -9,7 +9,7 @@ This repository contains a set of examples of microservices written in Go using 
 
 ## Protocol Buffers
 
-This project uses `Protocol Buffers` for communication between the services. The `.proto` files typically are located in the `proto` directory, however, this project is simply a consumer so the `.proto` definitions are stored in a `BSR` which is defined in the `deps` key in `proto/buf.yaml`. The `Makefile` contains the commands to generate the Go code from the `.proto` files. For this we use [buf](https://buf.build/) (which for Go uses `protoc-gen-go` under the hood).
+This project uses `Protocol Buffers` for communication between the services. The `.proto` files typically are located in the `proto` directory, however, this project is simply a consumer so the `.proto` definitions are stored in a **Buf Schema Registry (BSR)** which is defined in the `deps` key in `proto/buf.yaml`. The `Makefile` contains the commands to generate the Go code from the `.proto` files. For this we use [buf](https://buf.build/) (which for Go uses `protoc-gen-go` under the hood).
 
 ## Authentication
 
