@@ -10,12 +10,13 @@ services:
     volumes:
       - ./postgres:/docker-entrypoint-initdb.d
   gateway:
-    image: mkm29/grpc-api-gateway:0.1.1
+    build:
+      context: https://github.com/mkm29/go-grp-api-gateway.git
     ports:
       - "3000:3000"
   auth:
     build:
-      context: ../go-grpc-auth-svc/
+      context: https://github.com/mkm29/go-grpc-auth-svc.git
       args:
         DB_USERNAME: postgres
         DB_PASSWORD: postgres
@@ -25,7 +26,7 @@ services:
       - db
   order:
     build:
-      context: ../go-grpc-order-svc/
+      context: https://github.com/mkm29/go-grpc-order-svc.git
       args:
         DB_USERNAME: postgres
         DB_PASSWORD: postgres
@@ -35,7 +36,7 @@ services:
       - db
   product:
     build:
-      context: ../go-grpc-product-svc/
+      context: https://github.com/mkm29/go-grpc-product-svc.git
       args:
         DB_USERNAME: postgres
         DB_PASSWORD: postgres
