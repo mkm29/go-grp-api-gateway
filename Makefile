@@ -40,11 +40,11 @@ create_database: ## Create the database
 
 build: ## Build the project
 	@echo "Building the project"
-	@go build -o bin/$(PROJECT) cmd/main.go
+	@CGO_ENABLED=0 GOOS=linux go build -a -installsuffix nocgo -o /app ./cmd/main.go
 
 proto: ## Generate proto files
-	protoc pkg/**/pb/*.proto --go_out=:. --go-grpc_out=:. 
-	# --go-grpc_out=:.  --go_out=./client --go-grpc_out=./client
+  buf generate
+	# protoc pkg/**/pb/*.proto --go_out=:. --go-grpc_out=:. 
 
 server: ## Run server
 	go run cmd/main.go

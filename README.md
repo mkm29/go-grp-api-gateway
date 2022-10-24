@@ -7,6 +7,10 @@ This repository contains a set of examples of microservices written in Go using 
 - https://github.com/mkm29/go-grpc-auth-svc - Authentication SVC (gRPC)
 - https://github.com/mkm29/go-grp-api-gateway - API Gateway (HTTP)
 
+## Protocol Buffers
+
+This project uses `Protocol Buffers` for communication between the services. The `.proto` files typically are located in the `proto` directory, however, this project is simply a consumer so the `.proto` definitions are stored in a `BSR` which is defined in the `deps` key in `proto/buf.yaml`. The `Makefile` contains the commands to generate the Go code from the `.proto` files. For this we use [buf](https://buf.build/) (which for Go uses `protoc-gen-go` under the hood).
+
 ## Authentication
 
 Since most endpoints are protected, we need to authenticate the user before allowing them to access the endpoints. We use a simple JWT-based authentication mechanism. The authentication service is responsible for registering users (just using `bcrypt` to hash passwords for now), logging is users (generating a JWT token), as well as validating the token.

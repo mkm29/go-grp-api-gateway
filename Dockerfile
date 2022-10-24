@@ -7,7 +7,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix nocgo -o /app ./cmd/main
 
 # Final image
 LABEL maintainer="Mitch Murphy <mitch.murphy@gmail.com>" \
-  version="0.1.1" \
+  version="0.2.1" \
   description="API Gateway for Go gRPC demo"
 FROM alpine:3.16
 COPY --from=builder /app /api-gateway/
