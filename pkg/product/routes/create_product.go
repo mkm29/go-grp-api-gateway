@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/mkm29/go-grp-api-gateway/client/pkg/product/pb"
+	"github.com/mkm29/go-grp-api-gateway/gen/proto/go/pkg/product/pb"
 )
 
 type CreateProductRequestBody struct {

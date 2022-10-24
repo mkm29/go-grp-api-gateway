@@ -3,8 +3,9 @@ package product
 import (
 	"fmt"
 
-	"github.com/mkm29/go-grp-api-gateway/client/pkg/product/pb"
+	"github.com/mkm29/go-grp-api-gateway/gen/proto/go/pkg/product/pb"
 	"github.com/mkm29/go-grp-api-gateway/pkg/config"
+
 	"google.golang.org/grpc"
 )
 

@@ -1,0 +1,11 @@
+version: v1
+deps:
+  - buf.build/smigula/product
+  - buf.build/smigula/auth
+  - buf.build/smigula/order
+lint:
+  use:
+    - DEFAULT
+breaking:
+  use:
+    - FILE

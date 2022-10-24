@@ -6,7 +6,7 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
-	"github.com/mkm29/go-grp-api-gateway/client/pkg/product/pb"
+	"github.com/mkm29/go-grp-api-gateway/gen/proto/go/pkg/product/pb"
 )
 
 func FindOne(ctx *gin.Context, c pb.ProductServiceClient) {
