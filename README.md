@@ -5,7 +5,7 @@ This repository contains a set of examples of microservices written in Go using 
 - https://github.com/mkm29/go-grpc-product-svc - Product SVC (gRPC)
 - https://github.com/mkm29/go-grpc-order-svc - Order SVC (gRPC)
 - https://github.com/mkm29/go-grpc-auth-svc - Authentication SVC (gRPC)
-- https://github.com/mkm29/go-grpc-api-gateway - API Gateway (HTTP)
+- https://github.com/mkm29/go-grp-api-gateway - API Gateway (HTTP)
 
 ## Authentication
 
